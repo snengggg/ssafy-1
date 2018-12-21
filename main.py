@@ -10,10 +10,10 @@ from flask import Flask, request, make_response, render_template
 
 app = Flask(__name__)
 
-slack_token = "xoxb-507380538243-508927217638-jsvIkQFW4KVnmywMe8yIbv8g"
-slack_client_id = "507380538243.507725019413"
-slack_client_secret = "9f66369f2e8529302930f35ad3a7be72"
-slack_verification = "owO3nYhaCQQ9lvcQVEzpczmM"
+slack_token = ""
+slack_client_id = ""
+slack_client_secret = ""
+slack_verification = ""
 sc = SlackClient(slack_token)
 
 # 크롤링 함수 구현하기
