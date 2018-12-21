@@ -10,7 +10,7 @@ from flask import Flask, request, make_response, render_template
 
 app = Flask(__name__)
 
-slack_token = "xoxb-507380538243-508927217638-jsvIkQFW4KVnmywMe8yIbv8g"
+slack_token = "xoxb-507380538243-508927217638-6xKMGWaW2ghL6MFN9y82hevL"
 slack_client_id = "507380538243.507725019413"
 slack_client_secret = "9f66369f2e8529302930f35ad3a7be72"
 slack_verification = "owO3nYhaCQQ9lvcQVEzpczmM"
@@ -41,21 +41,20 @@ def _crawl_naver_keywords(text):
             # temp = str(i) + "위 : " + keyword.get_text() + " / "  + singer.get_text()
             titleName.append(temp)
             '''
-    for titleName, bjName in zip(soup.find_all("div", class_="castbox"), soup.find_all("span", class_="subject")):
-        if i < 10:
-            i += 1
-            temp = "{index}위 : {titleName} / {bjName}".format(index=i, titleName=titleName.get_text().strip(),
-                                                              bjName=bjName.get_text().strip())
-            # temp = str(i) + "위 : " + keyword.get_text() + " / "  + singer.get_text()
-            titleName.append(temp)
 
-    keywords = []
-    for i, keyword in enumerate(soup.find("div", {class_:"cast_box"}).find_all("span", class_:"subject"):
-        if i < 20:
-            keywords.append(keyword.get_text())
+
+    keywords = "그런 일은 일어나지 않겠지만, 일주일에 하루 츄리닝을 입게 해주면 좋겠다"
+    #for i, keyword in enumerate(soup.find("div", {class_:"cast_box"}).find_all("span", class_:"subject"):
+    #    if i < 20:
+    #        keywords.append(keyword.get_text())
     # 한글 지원을 위해 앞에 unicode u를 붙혀준다.
     return u'\n'.join(keywords)
-            
+
+    temp = "{keywords}".format(keywords=keyword.get_text().strip())
+    # temp = str(i) + "위 : " + keyword.get_text() + " / "  + singer.get_text()
+    keywords.append(temp)
+
+    
 
     '''#네이버 크롤링 참고
     keywords = []
